@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.weld/
+.weld-a/
+.weld-b/
+*.gguf
