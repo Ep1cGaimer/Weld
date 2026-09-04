@@ -1,6 +1,8 @@
 node_modules/
-dist/
 .weld/
 .weld-a/
 .weld-b/
 *.gguf
+*.log
+npm-debug.log*
+.DS_Store

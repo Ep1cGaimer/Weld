@@ -31,7 +31,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "selftest": "node dist/loopback/pipe-test.js",
     "weld": "node dist/cli.js"
   },
