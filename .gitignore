@@ -3,6 +3,7 @@ node_modules/
 .weld-a/
 .weld-b/
 *.gguf
+*.tgz
 *.log
 npm-debug.log*
 .DS_Store

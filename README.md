@@ -5,11 +5,20 @@
 Weld turns two or more computers into one inference cluster using llama.cpp's RPC backend, and gives you a single OpenAI-compatible endpoint on `localhost`. Windows + CUDA, macOS + Metal, and CPU nodes can all join the same cluster.
 
 ```
-npm i -g github:Ep1cGaimer/Weld
+npm i -g https://github.com/Ep1cGaimer/Weld/releases/download/v0.1.0/weld-llm-0.1.0.tgz
 weld setup
 ```
 
-That's the whole install — no compilers, no Python, no Docker. Weld downloads pinned llama.cpp binaries for your platform on first setup.
+That's the whole install — no compilers, no Python, no Docker, no git. Weld downloads pinned llama.cpp binaries for your platform on first setup.
+
+<details>
+<summary>Other install options</summary>
+
+```bash
+npm i -g github:Ep1cGaimer/Weld       # from source (needs git installed)
+git clone https://github.com/Ep1cGaimer/Weld && cd Weld && npm i && npm link
+```
+</details>
 
 ---
 
@@ -25,7 +34,7 @@ weld pair                     # prints a 6-digit code + your LAN ip
 **Your friend (the donor — lends their GPU):**
 
 ```bash
-npm i -g github:Ep1cGaimer/Weld
+npm i -g https://github.com/Ep1cGaimer/Weld/releases/download/v0.1.0/weld-llm-0.1.0.tgz
 weld setup
 weld pair 482913 --host 192.168.1.42    # code + your ip
 weld node                                # leave this running
