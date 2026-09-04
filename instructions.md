@@ -1,5 +1,11 @@
 # Weld — Complete Build Instructions
 
+> **Note:** this is the original phase-by-phase build guide. The shipped code in `src/`
+> diverged from it in a few places while getting v1 working: `src/ui.ts` replaced
+> `@clack/prompts`, the GGUF metadata type enum was corrected (string = 8, array = 9),
+> HTTP 416 is treated as "download already complete", and `weld peers` was added.
+> `README.md` is the source of truth for how the tool behaves.
+
 You are building `weld`: an npm CLI that lets friends pool GPUs (Windows CUDA + Mac Metal + CPU) into one cluster over llama.cpp's RPC, with mTLS pairing, tunneled traffic, and an OpenAI-compatible endpoint on your machine.
 
 **Runtime:** Node.js ≥ 20, TypeScript, zero native npm modules. (You can *develop* with Bun if you like — every API used is `node:*` so both work — but the product targets npm/Node.)

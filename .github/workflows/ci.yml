@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
+      - name: transport self-test
+        run: npm run selftest
+        env:
+          WELD_HOME: ${{ runner.temp }}/weld-ci
+      - name: cli smoke test
+        run: |
+          node dist/cli.js --version
+          node dist/cli.js doctor
+        env:
+          WELD_HOME: ${{ runner.temp }}/weld-ci

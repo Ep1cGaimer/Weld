@@ -1,16 +1,41 @@
 {
   "name": "weld-llm",
   "version": "0.1.0",
+  "description": "Pool GPUs with friends over llama.cpp RPC — run models bigger than any single machine, one OpenAI-compatible endpoint",
+  "keywords": [
+    "llm",
+    "llama.cpp",
+    "distributed-inference",
+    "gguf",
+    "cluster",
+    "rpc",
+    "gpu",
+    "cuda",
+    "metal",
+    "local-ai"
+  ],
+  "license": "MIT",
+  "author": "Ep1cGaimer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ep1cGaimer/Weld.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ep1cGaimer/Weld/issues"
+  },
+  "homepage": "https://github.com/Ep1cGaimer/Weld#readme",
   "type": "module",
   "engines": { "node": ">=20" },
   "bin": { "weld": "dist/cli.js" },
+  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
+    "prepare": "npm run build",
+    "selftest": "node dist/loopback/pipe-test.js",
     "weld": "node dist/cli.js"
   },
   "dependencies": {
-    "@clack/prompts": "^0.7.0",
     "commander": "^12.1.0",
     "node-forge": "^1.3.1"
   },
